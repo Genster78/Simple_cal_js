@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+        body{
+            display: flex;
+            align-items: center;
+        }
+        #main{
+            width: 230px;
+            height: 240px;
+            background-color: black; 
+            align-items: center;
+        }
+        input{
+            width:21%;
+            height: 40px;
+            font-size: 20px;
+            margin: 3px;
+        }
+
+        #eee{
+            width: 93%;
+            height: 40px;
+            background-color: silver;
+
+        }
+    </style>
+
+
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id = "main">
+        <form name = "f">
+            <input type="text" name="input" placeholder="0" id = "eee"> <br>
+            <input type="button" value="1" onclick="f.input.value+=1">
+            <input type="button" value="2" onclick="f.input.value+=2">
+            <input type="button" value="3" onclick="f.input.value+=3">
+            <input type="button" value="+" onclick="add()"> 
+            <br>
+            <input type="button" value="4" onclick="f.input.value+=4">
+            <input type="button" value="5" onclick="f.input.value+=5">
+            <input type="button" value="6" onclick="f.input.value+=6">
+            <input type="button" value="-" onclick="sub()"> 
+            <br>
+            <input type="button" value="7" onclick="f.input.value+=7">
+            <input type="button" value="8" onclick="f.input.value+=8">
+            <input type="button" value="9" onclick="f.input.value+=9">
+            <input type="button" value="/" onclick="divi()"> 
+            <br>
+            <input type="button" value="C" onclick="f.input.value=''">
+            <input type="button" value="0" onclick="f.input.value+=0">
+            <input type="button" value="=" onclick="f.input.value=eval(f.input.value)">
+            <input type="button" value="x" onclick="mul()"> 
+            <br>
+        </form>
+    </div>
+
+    <script>
+        function add() {
+            var act = 0, b = 0;
+            act = f.input.value;
+            b = act.charAt(act.length-1);
+            
+            if (b == '+' || b == '-' || b == '/' || b == '*') {
+                f.input.value = act.substring(0, act.length-1);
+                f.input.value += '+';
+            } else {
+                f.input.value += '+';
+            }
+        }
+
+        function sub() {
+            var act = 0, b = 0;
+            act = f.input.value;
+            b = act.charAt(act.length-1);
+            
+            if (b == '+' || b == '-' || b == '/' || b == '*') {
+                f.input.value = act.substring(0, act.length-1);
+                f.input.value += '-';
+            } else {
+                f.input.value += '-';
+            }
+        }
+
+        function divi() {
+            var act = 0, b = 0;
+            act = f.input.value;
+            b = act.charAt(act.length-1);
+            
+            if (b == '+' || b == '-' || b == '/' || b == '*') {
+                f.input.value = act.substring(0, act.length-1);
+                f.input.value += '/';
+            } else {
+                f.input.value += '/';
+            }
+        }
+
+        function mul() {
+            var act = 0, b = 0;
+            act = f.input.value;
+            b = act.charAt(act.length-1);
+            
+            if (b == '+' || b == '-' || b == '/' || b == '*') {
+                f.input.value = act.substring(0, act.length-1);
+                f.input.value += '*';
+            } else {
+                f.input.value += '*';
+            }
+        }
+        </script>
+</body>
+</html>
